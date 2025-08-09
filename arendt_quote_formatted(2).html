@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -5,129 +6,185 @@
     <title>Hannah Arendt - Prophetische Analyse 1944</title>
     <style>
         body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    background-image: url('./Copilot_20250809_094956.png');  /* ← NEU */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* Rest bleibt gleich... */
-}
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-image: url('./Copilot_20250809_094956.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 20px;
+            margin: 0;
+            line-height: 1.5;
+            color: #ffffff;
+            min-height: 100vh;
         }
         
         .container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 5px solid #d4af37;
+            background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(20,20,20,0.9));
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(255,215,0,0.3);
+            border: 3px solid #FFD700;
+            backdrop-filter: blur(10px);
         }
         
         .header {
             text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,140,0,0.1));
+            border-radius: 10px;
+            border: 2px solid #FFD700;
         }
         
         .title {
-            font-size: 1.6em;
-            color: #8b4513;
-            margin-bottom: 5px;
+            font-size: 1.8em;
+            color: #FFD700;
+            margin-bottom: 8px;
             font-weight: bold;
+            text-shadow: 0 0 20px #FFD700, 0 0 40px #FFA500;
+            letter-spacing: 1px;
         }
         
         .subtitle {
-            font-size: 1.1em;
-            color: #666;
+            font-size: 1.2em;
+            color: #FFA500;
             font-style: italic;
+            text-shadow: 0 0 10px #FFA500;
         }
         
         .option {
-            background: #f8f9fa;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-            border-left: 3px solid;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 2px solid;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: all 0.3s ease;
+        }
+        
+        .option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
         }
         
         .peace-option {
-            border-left-color: #28a745;
+            background: linear-gradient(135deg, rgba(0,255,127,0.2), rgba(0,200,100,0.1));
+            border-color: #00FF7F;
+            box-shadow: 0 0 25px rgba(0,255,127,0.3), 0 10px 30px rgba(0,0,0,0.6);
         }
         
         .fortress-option {
-            border-left-color: #dc3545;
+            background: linear-gradient(135deg, rgba(255,20,60,0.2), rgba(220,20,60,0.1));
+            border-color: #FF1493;
+            box-shadow: 0 0 25px rgba(255,20,147,0.3), 0 10px 30px rgba(0,0,0,0.6);
         }
         
         .option-title {
-            font-size: 1.1em;
+            font-size: 1.3em;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            text-shadow: 0 0 15px currentColor;
+        }
+        
+        .peace-option .option-title {
+            color: #00FF7F;
+        }
+        
+        .fortress-option .option-title {
+            color: #FF1493;
         }
         
         .option-content {
-            font-size: 0.95em;
-            margin-left: 25px;
+            font-size: 1.05em;
+            margin-left: 30px;
+            color: #FFFFFF;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
         
         .critical-quote {
-            background: #343a40;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-size: 1.1em;
+            background: linear-gradient(135deg, rgba(255,69,0,0.3), rgba(139,0,0,0.2));
+            color: #FFFFFF;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.3em;
             font-style: italic;
             text-align: center;
+            border: 2px solid #FF4500;
+            box-shadow: 0 0 30px rgba(255,69,0,0.4), 0 10px 30px rgba(0,0,0,0.6);
+            text-shadow: 0 0 20px #FF4500;
         }
         
         .current-section {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
+            background: linear-gradient(135deg, rgba(255,215,0,0.25), rgba(255,140,0,0.15));
+            border: 2px solid #FFD700;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 0 25px rgba(255,215,0,0.2), 0 10px 30px rgba(0,0,0,0.6);
         }
         
         .current-title {
-            font-size: 1.1em;
-            color: #856404;
+            font-size: 1.3em;
+            color: #FFD700;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px #FFD700;
         }
         
         .current-content {
-            font-size: 0.95em;
-            color: #333;
+            font-size: 1.05em;
+            color: #FFFFFF;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
         
         .source {
             text-align: center;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 10px;
+            border: 1px solid #666;
             font-style: italic;
-            color: #666;
-            font-size: 0.9em;
+            color: #CCCCCC;
+            font-size: 1em;
         }
         
         .emoji {
-            margin-right: 8px;
+            margin-right: 10px;
+            font-size: 1.2em;
+            filter: drop-shadow(0 0 5px currentColor);
         }
         
         .highlight {
-            background: #ffeaa7;
-            padding: 2px 4px;
-            border-radius: 3px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000000;
+            padding: 3px 8px;
+            border-radius: 5px;
             font-weight: bold;
+            text-shadow: none;
+            box-shadow: 0 2px 10px rgba(255,215,0,0.4);
         }
         
         .arrow {
-            color: #d4af37;
+            color: #FFD700;
             font-weight: bold;
-            margin: 0 8px;
+            margin: 0 10px;
+            text-shadow: 0 0 10px #FFD700;
+            font-size: 1.2em;
+        }
+        
+        strong {
+            color: #FFFFFF;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+        
+        p {
+            color: #FFFFFF;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
     </style>
 </head>
@@ -138,7 +195,7 @@
             <div class="subtitle">PROPHETISCHE ANALYSE</div>
         </div>
         
-        <p style="font-size: 1.1em; text-align: center; font-style: italic; margin-bottom: 20px;">
+        <p style="font-size: 1.2em; text-align: center; font-style: italic; margin-bottom: 25px;">
             <strong>"Israel hat nur zwei Wege:"</strong>
         </p>
         
